@@ -1,8 +1,8 @@
 <?php
 
 // LOAD ALL THE PIECES NEEDED
-include ($_SERVER["DOCUMENT_ROOT"] . "/scclist/components/config.php");
-include ($_SERVER["DOCUMENT_ROOT"] . "/scclist/components/db.php");
+include ("components/config.php");
+include ("components/db.php");
 
 
 ?>
@@ -11,7 +11,7 @@ include ($_SERVER["DOCUMENT_ROOT"] . "/scclist/components/db.php");
 
 <head>
 <title><?php print(_SITENAME); ?> - Report Page</title>
-<link href="/scclist/assets/styles/main.css" rel="StyleSheet" />
+<link href="assets/styles/main.css" rel="StyleSheet" />
 </head>
 
 <body>
@@ -22,7 +22,7 @@ include ($_SERVER["DOCUMENT_ROOT"] . "/scclist/components/db.php");
 	<ul>
 		<li><a href="index.php">Home</a></li>
 		<li><a href="sell.php">Sell an item</a></li>
-		<li><a href="signon.php">Sign-in</a></li>
+		<li><a href="signin.php">Sign-in</a></li>
 		<li><a href="about.php">About</a></li>
 		<li><a href="contact.php">Contact</a></li>						
 	</ul>
