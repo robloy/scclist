@@ -21,7 +21,17 @@ header("Location:" . $results);
 
 function addItem()
 {
-    $error = validateSell();
+    $price = floatval($_POST["price"]);
+    $title = cleanText($_POST["title"]);
+    $description = cleanText($_POST["description"]);
+    if ($_POST["image"] <> '')
+    {
+        $imagename = imageName(cleantext($_POST["image"]));
+        if ($imagename <> 'no-image.png')
+            move_uploaded_file($_FILES["image"]["tmp_name"],'user/images/'.$imagename);
+    }
+    else
+        $imagename = 'no-image1.png';
 
     $error = '';
 
@@ -42,16 +52,16 @@ function addItem()
         try{
             global $dbh;
             $stmt = $dbh->prepare($sql);
-            $stmt->bindParam(':title',      $_POST["title"] );
-            $stmt->bindParam(':description',$_POST["description"] );
-            $stmt->bindParam(':price',      $_POST["price"] );
-            $stmt->bindParam(':image',      $_POST["image"] );
-            $stmt->bindParam(':seller',     $_POST["seller"] );
-            $stmt->bindParam(':category',   $_POST["category"] );
-            $stmt->bindParam(':location',   $_POST["location"] );
+            $stmt->bindParam(':title',      $title);
+            $stmt->bindParam(':description',$description);
+            $stmt->bindParam(':price',      $price);
+            $stmt->bindParam(':image',      $imagename );
+            $stmt->bindParam(':seller',     intval($_POST["seller"]) );
+            $stmt->bindParam(':category',   intval($_POST["category"]) );
+            $stmt->bindParam(':location',   intval($_POST["location"]) );
             $stmt->execute();
 
-            $stmt->debugDumpParams();
+            //  $stmt->debugDumpParams();
         }
         catch (PDOException $ex)
         {

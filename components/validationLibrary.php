@@ -1,24 +1,11 @@
 <?php
 
-// Check for DECIMAL
-function validateMoney($money) {
-
-    if (is_float($money))
-        return true;
-    else
-        return false;
-}
-
 // Check for normal TEXT
-function validateText($text) {
+function cleanText($text) {
 
-    return true;
-}
+    $text = preg_replace("/[^A-Za-z0-9., ]/", '', $text);
 
-// Check for normal TEXT
-function validateDescription($text) {
-
-    return true;
+    return $text;
 }
 
 // Check for FILETYPE and SIZE
@@ -26,6 +13,29 @@ function validateUpload($fileName, $folderName) {
 
         return true;
 }
+
+function imageName($file){
+
+    $filepart   = explode('.', mb_strtolower($file));
+    $fileExt    = $filepart[count($filepart)-1];
+
+    switch ($fileExt)
+    {
+        case 'gif':
+        case 'jpg':
+        case 'png':
+        case 'jpeg':
+            $filename   = implode('',$filepart) . time() . '.' . $fileExt;
+            break;
+        default:
+            $filename   = 'no-image2.png';
+
+    }
+
+    return $filename;
+
+}
+
 
 function validateSell(){
 

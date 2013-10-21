@@ -24,7 +24,7 @@ function locationList() {
     $sql = 'SELECT l_id, l_zip FROM location WHERE l_status = "" ORDER BY l_zip';
     $records = $dbh->query($sql);
 
-    $locHTML .= '<select name="category">';
+    $locHTML .= '<select name="location">';
     foreach ($records as $rows)
         $locHTML .= '<option value="'.$rows["l_id"].'">'.$rows["l_zip"].'</option>';
 

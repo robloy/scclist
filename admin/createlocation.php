@@ -21,9 +21,18 @@ if ($_POST["zip"] !== null)
 
 ?>
 
+<!DOCTYPE html>
 <html>
 
+<head>
+    <title><?php print(_SITENAME); ?> - Admin: Create Location Page</title>
+    <link href="../assets/styles/main.css" rel="StyleSheet" />
+</head>
+
 <body>
+<?php include_once('../template/header.php'); ?>
+<section>
+    <h2>Admin: Create Location ...</h2>
 
 <form method="POST">
 
@@ -32,7 +41,8 @@ if ($_POST["zip"] !== null)
     <p><input type="submit" /></p>
 </form>
 
+</section>
+<?php include_once('../template/footer.php'); ?>
+
 </body>
-
-
 </html>

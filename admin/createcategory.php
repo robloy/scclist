@@ -22,9 +22,18 @@ if ($_POST["category"] !== null)
 
 ?>
 
+<!DOCTYPE html>
 <html>
 
+<head>
+    <title><?php print(_SITENAME); ?> - Admin: Create Category Page</title>
+    <link href="../assets/styles/main.css" rel="StyleSheet" />
+</head>
+
 <body>
+<?php include_once('../template/header.php'); ?>
+<section>
+    <h2>Admin: Create Category ...</h2>
 
 <form method="POST">
 
@@ -33,7 +42,8 @@ if ($_POST["category"] !== null)
 <p><input type="submit" /></p>
 </form>
 
+</section>
+<?php include_once('../template/footer.php'); ?>
+
 </body>
-
-
 </html>

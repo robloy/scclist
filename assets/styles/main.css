@@ -153,4 +153,9 @@ footer li:first-child a {
 		-moz-border-radius-bottomleft: 5px;
 		-webkit-border-bottom-left-radius: 5px;
 }
- 
+
+.itemImage {
+    width: 125px;
+    height: 125px;
+
+}
