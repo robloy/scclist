@@ -1,4 +1,6 @@
 <?php
+session_start();
+print_r($_SESSION);
 
 // LOAD ALL THE PIECES NEEDED
 include ("components/config.php");
@@ -21,8 +23,10 @@ include ("components/menuLibrary.php");
 <section>
 <h2>Sell an item...</h2>
 
-<form method="POST" action="process.php?type=2">
-<input type="hidden" name="seller" value="1" />
+<form method="POST" action="process.php?type=2" enctype="multipart/form-data">
+<input type="hidden" 
+	name="seller" 
+	value="<?php print($_SESSION["id"]); ?>" />
 <p>Title:<br />
 <input type="text" name="title" /></p>
 <p>Description:<br />

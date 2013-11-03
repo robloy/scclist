@@ -1,6 +1,7 @@
 <?php
 include("../components/config.php");
 include("../components/db.php");
+include("../components/displayLibrary.php");
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +18,7 @@ include("../components/db.php");
     <h2>Admin ...</h2>
 <p><a href="createlocation.php">Create Location</a></p>
 <p><a href="createcategory.php">Create Category</a></p>
+<?php echo displayusers(); ?>
 </section>
 <?php include_once('../template/footer.php'); ?>
 

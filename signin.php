@@ -18,7 +18,7 @@ include ("components/db.php");
 <?php include_once('template/header.php'); ?>
 <section>
 <h2>Sign-in ...</h2>
-    <form action="process.php" method="POST">
+    <form action="process.php?type=4" method="POST">
      <p>Username (email): <br />
          <input type="text" name="username" /></p>
         <p>Password: <br />

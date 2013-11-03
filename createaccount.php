@@ -19,17 +19,17 @@ include ("components/menuLibrary.php");
 <?php include_once('template/header.php'); ?>
 
 <section>
-<h2>Sell an item...</h2>
+<h2>Create Account...</h2>
 
-<form method="POST" action="process.php?type=2">
+<form method="POST" action="process.php?type=3">
 <p>eMail:<br />
 <input type="text" name="email1" /></p>
 <p>Re-enter eMail:<br />
 <input type="text" name="email2" /></p>
 <p>Password:<br />
-<input type="text" name="email1" /></p>
+<input type="text" name="password1" /></p>
 <p>Re-enter Password:<br />
-<input type="text" name="email2" /></p>
+<input type="text" name="password2" /></p>
 <p><input type="submit" /></p>
 </form>
 
